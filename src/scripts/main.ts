@@ -25,6 +25,7 @@ function handleMouseDown(e: MouseEvent): void {
 
     draggable.element.addEventListener('mousemove', handleMouseMove);
     draggable.element.addEventListener('mouseup', handleMouseUp);
+    draggable.element.addEventListener('mouseout', handleMouseUp);
 }
 
 function handleMouseMove(e: MouseEvent): void {
