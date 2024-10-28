@@ -1,4 +1,4 @@
-import '../styles/main.sass';
+import './main.sass';
 
 const droppable: HTMLElement | null = document.querySelector<HTMLElement>('.droppable') ? document.querySelector<HTMLElement>('.droppable') : document.body;
 const draggables: Array<HTMLElement> | null = document.querySelectorAll<HTMLElement>('.draggable') ? [...document.querySelectorAll<HTMLElement>('.draggable')] : null;
@@ -17,7 +17,7 @@ if (droppable && draggables) {
             draggable.addEventListener('mouseup', handleMouseUp);
         }
         
-        function handleMouseMove(e: MouseEvent): void {\
+        function handleMouseMove(e: MouseEvent): void {
             draggable.style.left = `${draggable.offsetLeft - x + e.clientX}px`
             draggable.style.top = `${draggable.offsetTop - y + e.clientY}px`
         
