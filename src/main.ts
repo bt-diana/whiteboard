@@ -1,12 +1,19 @@
 import './main.sass';
+import emojis from './emoji';
+
 
 const droppable: HTMLElement | null = document.querySelector<HTMLElement>('.droppable') ? document.querySelector<HTMLElement>('.droppable') : document.body;
-const draggables: Array<HTMLElement> | null = document.querySelectorAll<HTMLElement>('.draggable') ? [...document.querySelectorAll<HTMLElement>('.draggable')] : null;
+// const draggablesContainer: HTMLElement | null = document.querySelector<HTMLElement>('.draggables-container');
 
-if (droppable && draggables) {
-    draggables.forEach((draggable) => {
+if (droppable && emojis) {
+    emojis.forEach((emoji) => {
         let x: number, y: number;
+        const draggable: HTMLElement = document.createElement('div');
+        draggable.classList.add('draggable', 'emoji');
+        draggable.innerHTML = emoji;
 
+        droppable.appendChild(draggable);    
+        
         draggable.addEventListener('mousedown', handleMouseDown);
 
         function handleMouseDown(e: MouseEvent): void {
@@ -43,3 +50,6 @@ if (droppable && draggables) {
         }
     });    
 }
+
+const emojiImgs: Array<HTMLElement> | null = [...document.querySelectorAll<HTMLElement>('.emoji img')];
+emojiImgs?.forEach((emojiImg) => (emojiImg.setAttribute('draggable', 'false')));
