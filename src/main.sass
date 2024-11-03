@@ -10,7 +10,7 @@ body
     border-radius: 10px
     z-index: 2
 
-.draggables-container
+.menu
     background-color: red
     height: 200px
     width: calc(100% - 20px)
@@ -21,13 +21,13 @@ body
     left: 0
     bottom: 0
     z-index: 3
-
     
 .draggable
     position: fixed
     z-index: 4
 
-.draggable * 
+.draggable *,
+.menu__item * 
     cursor: pointer
     font-size: $draggable-size
     width: $draggable-size
@@ -37,4 +37,3 @@ body
     -moz-user-select: none
     -o-user-select: none
     user-select: none
-
