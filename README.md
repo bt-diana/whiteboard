@@ -28,7 +28,7 @@ This project is in active development. To try out the current version locally:
    ```bash
    cd whiteboard
    ```
-3. To builds the project and start a local web server run the sollowing commands:
+3. To builds the project and start a local web server run the following commands:
    ```bash
    npm run build
    npm run preview
