@@ -16,7 +16,7 @@ if (droppable && menu && emojis) {
         
         menuItem.addEventListener('mousedown', handleDragMenuItem);
 
-        function handleDragMenuItem(e: MouseEvent): void {
+        function handleDragMenuItem(): void {
             const draggable: HTMLElement = document.createElement('div');
             draggable.classList.add('draggable', 'emoji');
             draggable.innerHTML = emoji;
@@ -24,7 +24,7 @@ if (droppable && menu && emojis) {
             const emojiImg: HTMLElement | null = draggable.querySelector<HTMLElement>('.emoji img');
             emojiImg?.setAttribute('draggable', 'false')
 
-            droppable.appendChild(draggable);
+            droppable?.appendChild(draggable);
 
             draggable.addEventListener('mousedown', handleMouseDown);
 
@@ -32,7 +32,7 @@ if (droppable && menu && emojis) {
                 x = e.clientX;
                 y = e.clientY;
             
-                droppable.addEventListener('mousemove', handleMouseMove);
+                droppable?.addEventListener('mousemove', handleMouseMove);
                 draggable.addEventListener('mouseup', handleMouseUp);
             }
             
@@ -44,20 +44,20 @@ if (droppable && menu && emojis) {
                 y = e.clientY;
             }
             
-            function handleMouseUp(e: MouseEvent): void {
-                if (draggable.offsetLeft < droppable.offsetLeft) {
-                    draggable.style.left = `${droppable.offsetLeft}px`;
-                } else if (draggable.offsetLeft + draggable.offsetWidth > droppable.offsetLeft + droppable.offsetWidth) {
-                    draggable.style.left = `${droppable.offsetLeft + droppable.offsetWidth - draggable.offsetWidth}px`;
+            function handleMouseUp(): void {
+                if (droppable && draggable.offsetLeft < droppable?.offsetLeft) {
+                    draggable.style.left = `${droppable?.offsetLeft}px`;
+                } else if (droppable && draggable.offsetLeft + draggable.offsetWidth > droppable?.offsetLeft + droppable?.offsetWidth) {
+                    draggable.style.left = `${droppable?.offsetLeft + droppable?.offsetWidth - draggable.offsetWidth}px`;
                 }
     
-                if (draggable.offsetTop < droppable.offsetTop) {
-                    draggable.style.top = `${droppable.offsetTop}px`;
-                } else if (draggable.offsetTop + draggable.offsetHeight > droppable.offsetTop + droppable.offsetHeight) {
-                    draggable.style.top = `${droppable.offsetTop + droppable.offsetHeight - draggable.offsetHeight}px`;
+                if (droppable && draggable.offsetTop < droppable?.offsetTop) {
+                    draggable.style.top = `${droppable?.offsetTop}px`;
+                } else if (droppable && draggable.offsetTop + draggable.offsetHeight > droppable?.offsetTop + droppable?.offsetHeight) {
+                    draggable.style.top = `${droppable?.offsetTop + droppable?.offsetHeight - draggable.offsetHeight}px`;
                 }
     
-                droppable.removeEventListener('mousemove', handleMouseMove);
+                droppable?.removeEventListener('mousemove', handleMouseMove);
                 draggable.removeEventListener('mouseup', handleMouseUp);
             }
         }
