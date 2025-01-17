@@ -22,7 +22,7 @@ This project is in active development. To try out the current version locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/whiteboard.git
+   git clone https://github.com/bt-diana/whiteboard.git
    ```
 2. Navigate to the project directory:
    ```bash
