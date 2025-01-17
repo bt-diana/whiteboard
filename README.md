@@ -7,8 +7,6 @@
 
 This project was originally created to gain practical experience with TypeScript and to develop proficiency in using SASS. Currently in active development.
 
-[Demo](https://bt-diana.github.io/whiteboard)
-
 ## Features (under development)
 
 :white_check_mark: **Add Stickers**: Users can drag stickers onto the board and reposition them freely.
