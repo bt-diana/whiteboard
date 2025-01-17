@@ -49,3 +49,7 @@ This project is in active development. To try out the current version locally:
 - [emoji-assets](https://github.com/joypixels/emoji-assets.git)
 
 - [emoji-toolkit](https://github.com/joypixels/emoji-toolkit.git)
+
+## License
+
+This project is licensed under the MIT License.
